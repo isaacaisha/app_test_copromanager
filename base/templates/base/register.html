@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+- Chat Inscription Template
+{% endblock %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <h2>Inscription</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">S'inscrire</button>
+        </form>
+    </div>
+
+    <!-- Back Button login -->
+    <div class="text-center mt-5 mb-5">
+        <a href="{% url 'backoffice-superadmin' %}" class="btn btn-secondary mb-4">Retour à l'accueil</a>
+    </div>
+
+{% endblock %}

@@ -1,3 +1,43 @@
+{% load static %}
+
 <h1>
-  <a href="#">NAVBAR</a>
+  <a href="{% url 'home' %}">NAVBAR</a>
 </h1>
+
+<header class="header container">
+  <a class="header-brand" href="#">
+    <img src="{% static 'images/favicon3.ico' %}"" alt="" width="22" height="24" class="d-inline-block align-top"
+      alt="CoreUI Logo">
+    CoreUI
+  </a>
+  <button class="header-toggler" type="button">
+    <span class="header-toggler-icon"></span>
+  </button>
+  <ul class="header-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="headerDropdown" role="button" data-coreui-toggle="dropdown"
+        aria-expanded="false">
+        Dropdown
+      </a>
+      <div class="dropdown-menu" aria-labelledby="headerDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</header>

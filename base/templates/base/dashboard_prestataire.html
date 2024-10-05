@@ -1,0 +1,34 @@
+<!-- base/dashboard_prestataire.html -->
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+    - Prestataire Dashboard
+{% endblock %}
+
+{% block favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Bienvenue, {{ username }}!</h1>
+        <p>Voici votre tableau de bord en tant que Prestataire.</p>
+        
+        <!-- Add relevant content like assigned tasks, projects, etc. -->
+        <p>Vos tâches et projets en cours :</p>
+        <ul>
+            <!-- Example list of prestataire tasks (replace with dynamic content) -->
+            <li>Tâche 1 : Réparation</li>
+            <li>Tâche 2 : Entretien</li>
+        </ul>
+    </div>
+
+    <!-- Back Button login -->
+    <div class="text-center mt-5">
+        <a href="{% url 'login' %}" class="btn btn-secondary mb-4">Retour à l'accueil</a>
+    </div>
+
+{% endblock %}

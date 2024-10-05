@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+    - Connexion Template
+{% endblock %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <h2 class="mb-3">Connexion</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </div>
+            
+        </form>
+        <!--<p>Pas encore de compte ? <a href="{% url 'register' %}">Inscrivez-vous ici</a>.</p>-->
+    </div>
+    
+{% endblock %}

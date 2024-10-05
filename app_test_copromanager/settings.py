@@ -49,12 +49,14 @@ CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'app-dev.copromanager.com',
+    'test-cop.copromanager.com', 'www.test-cop.copromanager.com',
     '35.180.33.83', '0.0.0.0', '192.168.86.182'
 ]
 
 # Login URL for authentication redirects
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 
 # Application definition
@@ -72,6 +74,8 @@ INSTALLED_APPS = [
     #'rest_framework',
     #'corsheaders',
 ]
+
+AUTH_USER_MODEL = 'base.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -102,7 +106,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'app_test_copromanager.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

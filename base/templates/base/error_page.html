@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+- Connexion Template
+{% endblock %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="alert alert-danger text-center mt-5">
+                    <h1>Oops! Something went wrong.</h1>
+                    <p>We encountered an error while processing your request. Please try again later.</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Go to Homepage</a>
+                    <!-- Assuming you have a 'home' URL -->
+                    <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

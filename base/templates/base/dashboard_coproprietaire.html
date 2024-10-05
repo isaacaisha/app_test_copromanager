@@ -1,0 +1,35 @@
+<!-- base/dashboard_coproprietaire.html -->
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+    - Copropriétaire Dashboard
+{% endblock %}
+
+{% block favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Bienvenue, {{ username }}!</h1>
+        <p>Voici votre tableau de bord en tant que Copropriétaire.</p>
+        
+        <!-- Add relevant content like documents, charges, etc. -->
+        <p>Consultez vos documents et frais ici.</p>
+        <ul>
+            <!-- Example list of coproprietaire documents (replace with dynamic content) -->
+            <li>Document 1</li>
+            <li>Document 2</li>
+            <li>Frais de maintenance: 100€</li>
+        </ul>
+    </div>
+
+    <!-- Back Button login -->
+    <div class="text-center mt-5">
+        <a href="{% url 'login' %}" class="btn btn-secondary mb-4">Retour à l'accueil</a>
+    </div>
+
+{% endblock %}
