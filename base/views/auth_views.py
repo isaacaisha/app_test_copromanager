@@ -14,7 +14,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('login')
+            return redirect('backoffice-superadmin')
         else:
             print('error register')
 
@@ -64,6 +64,11 @@ def redirect_based_on_role(user):
         'prestataire': 'dashboard-prestataire',
     }
 
+    # Redirect syndic with the necessary syndic_id argument
+    if user.role == 'syndic':
+        return redirect('configurer-licence', syndic_id=user.id)
+
+    # For other roles, simply redirect to the appropriate dashboard
     return redirect(role_redirects.get(user.role, 'home'))
 
 
