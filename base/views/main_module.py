@@ -9,13 +9,6 @@ from base.forms import LicenceForm
 from datetime import datetime,date
 
 
-# # Créer des utilisateurs avec différents rôles
-# CustomUser.objects.create_user(username='rekin', email='rekin@mail.com', password='rekin123', role='superadmin')
-# CustomUser.objects.create_user(username='syndic1', email='syndic1@mail.com', password='password123', role='syndic')
-# CustomUser.objects.create_user(username='coproprietaire1', email='copro1@mail.com', password='password123', role='coproprietaire')
-# CustomUser.objects.create_user(username='prestataire1', email='prestataire1@mail.com', password='password123', role='prestataire')
-
-
 def home(request):
     context = {
         'date': datetime.now().strftime("%a %d %B %Y")
