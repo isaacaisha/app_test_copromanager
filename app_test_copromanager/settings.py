@@ -49,6 +49,7 @@ CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'real.copromanager.pro', 'www.real.copromanager.pro', '142.93.235.205',
     'test-cop.copromanager.com', 'www.test-cop.copromanager.com',
     '35.180.33.83', '0.0.0.0', '192.168.86.182'
 ]
@@ -160,6 +161,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Ensure this is correct for development
 ]
+
+# Media files (Uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

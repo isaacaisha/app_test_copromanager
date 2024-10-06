@@ -7,8 +7,8 @@
 <header class="header container">
   <a class="header-brand" href="#">
     <img src="{% static 'images/favicon3.ico' %}"" alt="" width="22" height="24" class="d-inline-block align-top"
-      alt="CoreUI Logo">
-    CoreUI
+      alt="·SìįSí· Logo">
+    ·SìįSí·
   </a>
   <button class="header-toggler" type="button">
     <span class="header-toggler-icon"></span>
@@ -35,6 +35,11 @@
     <li class="nav-item">
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link log-out" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% endif %}
   </ul>
   <form class="d-flex">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
